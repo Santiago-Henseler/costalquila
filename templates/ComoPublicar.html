@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Costa Alquila - Como Publicar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="30">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container ">
+            <a class="navbar-brand text-dark" href="{{url_for('inicio', id = 1)}}">Costa Alquila</a>
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto ">
+                    <li class="nav-item"><a href="{{url_for('inicio', id = 1)}}" class="nav-link text-dark"><span>Inicio</span></a></li>
+                    <li class="nav-item"><a href="{{url_for('ComoPublicar')}}" class="nav-link text-dark"><span>Como publicar</span></a></li>
+                    <li class="nav-item"><a href="{{url_for('Publicar')}}" class="nav-link text-dark"><span>Publicar</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<section class="ftco-section ftco-services-2 bg-light" id="workflow-section">
+			<div class="container mt-5">
+				<div class="row">
+                  <div class="col-md-4 heading-section ftco-animate">
+                    <h2 class="mb-4">Como publicar?</h2>
+                    <p>Alquila tu propiedad en la costa de manera sencilla y sin comiciones</p>
+                    <div class="media block-6 services text-center d-block pt-md-5 mt-md-5">
+                      <div class="icon justify-content-center align-items-center d-flex"><span>1</span></div>
+                      <div class="media-body p-md-3">
+                        <h3 class="heading mb-3">Comunicate con nosotros</h3>
+                        <p class="mb-5">En la pestaña "Publicar" vas a encontrar un formulario donde se te van a pedir los datos de la propiedad.
+                        Al enviarlo, un agente se pondra en contacto y acordaran el plan de anuncio.</p>
+                        <hr>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 d-flex align-self-stretch ftco-animate mt-lg-5">
+                    <div class="media block-6 services text-center d-block mt-lg-5 pt-md-5 pt-lg-4">
+                      <div class="icon justify-content-center align-items-center d-flex"><span>2</span></div>
+                      <div class="media-body p-md-3">
+                        <h3 class="heading mb-3">Cordina con los inquilinos</h3>
+                        <p class="mb-5">Una vez publicada la propiedad, los inquilinos se comunicaran atravez del Whatsapp o del mail para cordinar el alquiler.</p>
+                        <hr>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                    <div class="media block-6 services text-center d-block">
+                      <div class="icon justify-content-center align-items-center d-flex"><span>3</span></div>
+                      <div class="media-body p-md-3">
+                        <h3 class="heading mb-3">Alquila!</h3>
+                        <p class="mb-5">Acordado el alquiler, solo te resta cobrar el 100% del valor sin ninguna comicion!!</p>
+                        <hr>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+			</div>
+		</section>
+    <section class="ftco-section ftco-services-2 bg-light" id="services-section">
+			<div class="container">
+				<div class="row justify-content-center pb-5">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Planes de publicación</h2>
+            <p>Todas las publicaciones o renovaciones realizadas a partir del 01-07-2022 venceran el 31-07-2023</p>
+          </div>
+        </div>
+        <div class="row">
+        	<div class="col-md d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services text-center d-block">
+              <div class="icon justify-content-center align-items-center d-flex"><span style="font-size: 2vw;">0$</span></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Plan Basico</h3>
+                  <p>
+                      &gt Publicación con 4 fotos<br>
+                      &gt Descripcion detallada de la propiedad<br>
+                      &gt Soporte tecnico 24/7<br>
+                      &gt 6 meses publicado<hr>
+                  </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services text-center d-block mt-lg-5 pt-lg-4">
+              <div class="icon justify-content-center align-items-center d-flex"><span style="font-size: 2vw;">1500$</span></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Plan medio</h3>
+                  <P>
+                      &gt Publicación con 6 fotos<br>
+                      &gt Enlace directo a tu WhatsApp y tu mail<br>
+                      &gt Soporte tecnico 24/7<br>
+                      &gt 1 año publicado<hr>
+                  </P>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services text-center d-block">
+              <div class="icon justify-content-center align-items-center d-flex"><span style="font-size: 2vw;">2000$</span></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Plan avanzado</h3>
+                    <P>
+                      &gt Publicación con 9 fotos<br>
+                      &gt Enlace directo a tu WhatsApp y tu mail<br>
+                      &gt Soporte tecnico 24/7<br>
+                      &gt 1 año publicado<hr>
+                    </P>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services text-center d-block mt-lg-5 pt-lg-4">
+              <div class="icon justify-content-center align-items-center d-flex"><span style="font-size: 2vw;">2500$</span></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Plan maximo</h3>
+                  <P>
+                      &gt Publicación con 9 fotos<br>
+                      &gt Destaca la publicacion por una semana<br>
+                      &gt Soporte tecnico 24/7<br>
+                      &gt 1 año publicado<hr>
+                  </P>
+              </div>
+            </div>
+          </div>
+        </div>
+		</div>
+		</section>
+
+     <!--footer-->
+      <footer class="ftco-footer ftco-section">
+          <div class="container-fluid px-md-5">
+              <div class="row mb-5">
+                  <div class="col-md">
+                      <div class="ftco-footer-widget mb-4">
+                          <h2 class="ftco-heading-2"><u>Consultas</u></h2>
+                          <p>Comunicate con nosotros a travez de nuestros medios oficiales:</p>
+                          <ul class="list-unstyled">
+                              <li><a href="https://api.whatsapp.com/send?phone= +54 011 4075-7169"><span>&gt;</span> +54 011 4075-7169</a></li>
+                              <li><a href="mailto:costalquila@gmail.com"><span>&gt;</span> costalquila@gmail.com</a></li>
+                              <li><a href="https://www.instagram.com/costalquila/"><span>&gt;</span> @costalquila</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12 text-center">
+
+                      <p>
+                          Todos los derechos reservados &copy;
+                          <script>document.write(new Date().getFullYear());</script>
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </footer>
+      <!-- loader -->
+
+  <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+        </svg></div>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.4.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js" integrity="sha512-g2PN+aYR0KupTVwea5Ppqw4bxWLLypWdd+h7E0ydT8zF+/Y2Qpk8Y1SnzVw6ZCVJPrgB/91s3VfhVhP7Y4+ucw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.1/jquery.stellar.min.js" integrity="sha512-MZiEKWRoqHmTsaur2/0bTQaOT5DqmnMDWuXoYXgNwFzCq+J2rQRIa4uVOmkL7SnIIhis6V4IcPnhqKxgOt8zDg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/scrollax@1.0.0/scrollax.min.js"></script>
+
+     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

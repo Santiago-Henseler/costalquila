@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Costa Alquila - Publicar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="30">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container ">
+            <a class="navbar-brand text-dark" href="{{url_for('inicio', id = 1)}}">Costa Alquila</a>
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto ">
+                    <li class="nav-item"><a href="{{url_for('inicio', id = 1)}}" class="nav-link text-dark"><span>Inicio</span></a></li>
+                    <li class="nav-item"><a href="{{url_for('ComoPublicar')}}" class="nav-link text-dark"><span>Como publicar</span></a></li>
+                    <li class="nav-item"><a href="{{url_for('Publicar')}}" class="nav-link text-dark"><span>Publicar</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+      <div class="container">
+      	<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Publica tu propiedad</h2>
+            <p>Rellena el formulario de manera concisa y contactanos!</p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <form class="col-md-7 order-md-last d-flex ftco-animate">
+            <div class="bg-light p-4 p-md-5 contact-form">
+              <label for="name">Nombre y apellido</label>
+              <div class="form-group">
+                <input id="name" type="text" class="form-control" placeholder="Nombre y Apellido" required>
+              </div>
+                <label for="mail">Mail</label>
+              <div class="form-group">
+                <input id="mail" type="email" class="form-control" placeholder="Mail" required>
+              </div>
+                <label for="Npropiedad">Nombre de la propiedad</label>
+              <div class="form-group">
+                <input id="Npropiedad" type="text" class="form-control" placeholder="Nombre de la propiedad" required>
+              </div>
+              <div class="form-group">
+                  <label for="Localidad">Localidad</label>
+                <input id="Localidad" type="text" class="form-control" placeholder="Localidad" required>
+              </div>
+                <label for="Direccion">Direccion</label>
+              <div class="form-group">
+                <input id="Direccion" type="text" class="form-control" placeholder="Direccion" required>
+              </div>
+              <label for="Plan">Plan</label>
+              <select name="Plan" id="Plan" class="form-control">
+                  <option value="">Seleccionar</option>
+                  <option value="Plan Basico">Plan Basico</option>
+                  <option value="Plan medio">Plan medio</option>
+                  <option value="Plan avanzado">Plan avanzado</option>
+                  <option value="Plan maximo">Plan maximo</option>
+              </select>
+              <div class="form-group mt-5 ">
+                <div class="form-field" onclick="EnviarWarap()">
+                   <button type="submit" class="btn btn-primary w-100 ">
+                                 Publicar
+                   </button>
+                </div>
+              </div>
+            </div>
+
+          </form>
+      </div>
+      </div>
+    </section>
+    <!--footer-->
+      <footer class="ftco-footer ftco-section">
+          <div class="container-fluid px-md-5">
+              <div class="row mb-5">
+                  <div class="col-md">
+                      <div class="ftco-footer-widget mb-4">
+                          <h2 class="ftco-heading-2"><u>Consultas</u></h2>
+                          <p>Comunicate con nosotros a travez de nuestros medios oficiales:</p>
+                          <ul class="list-unstyled">
+                              <li><a href="https://api.whatsapp.com/send?phone= +54 011 4075-7169"><span>&gt;</span> +54 011 4075-7169</a></li>
+                              <li><a href="mailto:costalquila@gmail.com"><span>&gt;</span> costalquila@gmail.com</a></li>
+                              <li><a href="https://www.instagram.com/costalquila/"><span>&gt;</span> @costalquila</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12 text-center">
+
+                      <p>
+                          Todos los derechos reservados &copy;
+                          <script>document.write(new Date().getFullYear());</script>
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </footer>
+      <!-- loader -->
+
+  <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+        </svg></div>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.4.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js" integrity="sha512-g2PN+aYR0KupTVwea5Ppqw4bxWLLypWdd+h7E0ydT8zF+/Y2Qpk8Y1SnzVw6ZCVJPrgB/91s3VfhVhP7Y4+ucw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.1/jquery.stellar.min.js" integrity="sha512-MZiEKWRoqHmTsaur2/0bTQaOT5DqmnMDWuXoYXgNwFzCq+J2rQRIa4uVOmkL7SnIIhis6V4IcPnhqKxgOt8zDg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/scrollax@1.0.0/scrollax.min.js"></script>
+
+     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+
+</body>
+</html>
