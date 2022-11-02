@@ -1,12 +1,15 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es-MX">
 <head>
     <title>Costa Alquila - alquileres en la costa</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alquileres en la costa atlantica, sin cominiciones y dueño directo. Alquileres temporarios de propiedades en Costa del Este, Lucila del Mar, San Bernardo ,Pinamar,Mar de Ajó, Nueva Atlantis,San Clemente">
+    <meta name="author" content="Costalquila.ml" />
+    <meta name="keywords" content="Alquileres, Alquilar, Costa atlantica, Vacaciones, Propiedades">
 
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}">
-    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
@@ -16,19 +19,28 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F01JG2RFWS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F01JG2RFWS');
+</script>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="30">
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar text-light ftco-navbar-light site-navbar-target" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand text-dark" href="{{url_for('inicio', id = 1)}}">Costa Alquila</a>
+            <a  class="navbar-brand " href="{{url_for('inicio', id = 1)}}">Costa Alquila</a>
             <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> Menu
+                 Menu
             </button>
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav nav ml-auto ">
-                    <li class="nav-item"><a href="{{url_for('inicio', id = 1)}}" class="nav-link text-dark"><span>Inicio</span></a></li>
-                    <li class="nav-item"><a href="{{url_for('ComoPublicar')}}" class="nav-link text-dark"><span>Como publicar</span></a></li>
-                    <li class="nav-item"><a href="{{url_for('Publicar')}}" class="nav-link text-dark"><span>Publicar</span></a></li>
+                    <li class="nav-item"><a href="{{url_for('inicio', id = 1)}}" class="nav-link "><span>Inicio</span></a></li>
+                    <li class="nav-item"><a href="{{url_for('ComoPublicar')}}" class="nav-link "><span>Como publicar</span></a></li>
+                    <li class="nav-item"><a href="{{url_for('Publicar')}}" class="nav-link "><span>Publicar</span></a></li>
                 </ul>
             </div>
         </div>
@@ -39,7 +51,7 @@
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
                 <div class="col-md-5 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-                    <h1 class="mb-5 text-white" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Alquileres en La Costa</h1>
+                    <h1 class="mb-5 text-white" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Alquileres en La Costa atlantica</h1>
                     <p class="mb-5 text-white" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"></p>
                 </div>
             </div>
@@ -134,7 +146,7 @@
                                                 <h3>{{i[1]}}</h3>
                                             </div>
                                             <div class="pl-md-4">
-                                                <h4 class="price">{{i[5]}}.000$</h4>
+                                                <h3 class="price ml-3">{{i[5]}}.000$</h3>
                                             </div>
                                         </div>
                                         <p class="h-info"><span class="location"> {{i[2]}} </span> <span class="details">&mdash; {{i[7]}} piezas, {{i[6]}} baños</span></p>
@@ -213,7 +225,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/scrollax@1.0.0/scrollax.min.js"></script>
 
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
