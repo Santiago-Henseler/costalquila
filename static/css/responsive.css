@@ -1,0 +1,51 @@
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)
+    {
+
+        /* Force table to not be like tables anymore */
+        table, thead, tbody, th, td, tr
+        {
+           overflow: hidden;
+            display: block;
+            border: none !important;
+        }
+
+       .table{
+         min-width: 200px !important;
+         border: none !important;
+
+       }
+        /* Hide table headers (but not display: none;, for accessibility) */
+        tr
+        {
+            border: 1px solid #ccc;
+            padding-left: 2% !important;
+        }
+
+        td
+        {
+            /* Behave  like a "row" */
+            border: none !important;
+            position: relative;
+            padding-left: 5% !important;
+        }
+
+        td:before
+        {
+            /* Now like a table header */
+            position: absolute; /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+            border: none !important;
+        }
+
+        #btwarap{
+            margin-top: 10% !important;
+        }
+
+        #btmail{
+             margin-left: 20% !important;
+        }
+    }
