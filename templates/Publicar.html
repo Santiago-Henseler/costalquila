@@ -1,21 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-MX">
 <head>
     <title>Costa Alquila - Publicar</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Alquila tu propiedad en la costa atlantica de manera facil">
+    <meta name="author" content="Costalquila.ml" />
+    <meta name="keywords" content="Alquileres, Alquilar, Costa atlantica, Vacaciones, Propiedades">
 
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}">
     <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
-
     <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
-
-
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F01JG2RFWS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F01JG2RFWS');
+</script>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="30">
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
         <div class="container ">
@@ -40,7 +49,7 @@
       	<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
             <h2 class="mb-4">Publica tu propiedad</h2>
-            <p>Rellena el formulario de manera concisa y contactanos!</p>
+            <p>Completa el formulario y comenza a alquilar!</p>
           </div>
         </div>
 
@@ -75,6 +84,7 @@
                   <option value="Plan avanzado">Plan avanzado</option>
                   <option value="Plan maximo">Plan maximo</option>
               </select>
+                <a class="my-5" href="{{url_for('ComoPublicar')}}">Que plan elijo?</a>
               <div class="form-group mt-5 ">
                 <div class="form-field" onclick="EnviarWarap()">
                    <button type="submit" class="btn btn-primary w-100 ">
@@ -83,7 +93,6 @@
                 </div>
               </div>
             </div>
-
           </form>
       </div>
       </div>
@@ -134,9 +143,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/scrollax@1.0.0/scrollax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
      <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
 
 </body>
+
 </html>
