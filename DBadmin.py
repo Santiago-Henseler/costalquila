@@ -54,7 +54,15 @@ def getComodidades(id):
 def getHomeComodidades(id, Dmar, mascota, parrilla):
     c1 = int(Dmar)
     c2 = int(Dmar)+100
-    comodidades = cursor.execute(f"""SELECT * FROM Comodidades WHERE ID = '{id}'
-                                     AND Dmar between '{c1}' AND '{c2}'
+    comodidades = ""
+    if c1 == 500:
+        comodidades = cursor.execute(f"""SELECT * FROM Comodidades WHERE ID = '{id}'
+                                                 AND Dmar > '{c2}'
+                                                 AND Mascotas = '{mascota}'
+                                                 AND parrilla = '{parrilla}'
+                                             ;""").fetchall()
+    else:
+        comodidades = cursor.execute(f"""SELECT * FROM Comodidades WHERE ID = '{id}'
+                                         AND Dmar between '{c1}' AND '{c2}'
                                      ;""").fetchall()
     return comodidades
