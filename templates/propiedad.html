@@ -1,18 +1,32 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es-MX">
   <head>
     <title>Costa Alquila - {{home[1]}}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}">
+    <meta name="description" content="Alquilar en {{home[2]}} dueño directo sin cominiciones. Alquilar casa en la costa atlantica dueño directo. ">
+    <meta name="author" content="Costalquila.ml" />
+    <meta name="keywords" content="Alquileres, Alquilar, Costa atlantica, Vacaciones, Propiedades">
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}">
     <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-      <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
   </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F01JG2RFWS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F01JG2RFWS');
+</script>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
       <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
           <div class="container">
               <a class="navbar-brand text-dark" href="{{url_for('inicio', id = 1)}}">Costa Alquila</a>
@@ -29,6 +43,7 @@
               </div>
           </div>
       </nav>
+
       <section class="ftco-section ftco-services-2">
           <div class="container">
               <div class="row">
@@ -40,12 +55,12 @@
                                     {% for i in fotos %}
                                       {% if i == fotos[0] %}
                                         <div class="carousel-item active">
-                                          <img class="d-block w-100" src="https://i.ibb.co/{{i}}" alt="First slide">
+                                          <img class="d-block w-100" loading="lazy" src="https://i.ibb.co/{{i}}" alt="Propiedad en {{home[2]}}">
                                         </div>
                                       {% endif %}
                                       {% if i != fotos[0] %}
                                         <div class="carousel-item">
-                                          <img class="d-block w-100" src="https://i.ibb.co/{{i}}" alt="First slide">
+                                          <img class="d-block w-100" loading="lazy" src="https://i.ibb.co/{{i}}" alt="Propiedad en {{home[2]}}">
                                         </div>
                                       {% endif %}
                                      {% endfor %}
@@ -67,7 +82,7 @@
                                           <h3>{{home[1]}}</h3>
                                       </div>
                                       <div class="pl-md-4">
-                                          <h4 class="price">{{home[5]}}.000$</h4>
+                                          <h3 class="price ml-3">{{home[5]}}.000$</h3>
                                       </div>
                                   </div>
                                   <p>{{home[4]}}</p>
@@ -75,95 +90,94 @@
                           </div>
                       </div>
                   </div>
-                  <div class="col-md-12 tour-wrap">
-                      <table class="table">
-                          <tbody>
-                              <tr>
-                                  <th scope="row">Localidad</th>
-                                  <td>
-                                      <p>{{home[2]}}</p>
-                                  </td>
-                                  <td></td>
-                              </tr><!-- END TR-->
+                  <div class="col-md-12 tour-wrap bg-light">
+                            <table class="table bg-light">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Localidad</th>
+                                             <td>
+                                                 <p>{{home[2]}}</p>
+                                             </td>
 
-                              <tr>
-                                  <th scope="row">Direccion</th>
-                                  <td>
-                                      <p>{{home[3]}}</p>
-                                  </td>
-                                  <td></td>
-                              </tr><!-- END TR-->
-                              <tr>
-                                  <th scope="row">Cantidad de personas</th>
-                                  <td>
-                                      <p>{{home[6]}} personas maximo</p>
-                                  </td>
-                                  <td></td>
-                              </tr><!-- END TR-->
+                                        </tr>
+                                    <tr>
+                                    <tr>
+                                              <th scope="row">Direccion</th>
+                                              <td>
+                                                  <p>{{home[3]}}</p>
+                                              </td>
 
-                              <tr>
-                                  <th scope="row">Habitaciones</th>
-                                  <td>
-                                      <p>{{home[7]}} Dormitorios</p>
-                                  </td>
-                                  <td></td>
-                              </tr><!-- END TR-->
+                                          </tr>
+                                          <tr>
+                                              <th scope="row">Cantidad de personas</th>
+                                              <td>
+                                                  <p>{{home[6]}} personas maximo</p>
+                                              </td>
 
-                              <tr>
-                                  <th scope="row">Baños</th>
-                                  <td>
-                                      <p>{{home[6]}} Baños</p>
-                                  </td>
-                                  <td></td>
-                              </tr><!-- END TR-->
-                              <tr>
-                                  <th scope="row">Comodidades</th>
-                                  <td class="d-flex">
-                                      <ul>
-                                          {% if comodidades[1] %}
-                                             <li>A {{comodidades[1]}} metros del mar</li>
-                                          {% endif %}
-                                          {% if comodidades[4] == "True" %}
-                                             <li>Television</li>
-                                          {% endif %}
-                                      </ul>
-                                      <ul>
-                                          {% if comodidades[2] == "False" %}
-                                             <li>No acepta mascotas</li>
-                                          {% endif %}
-                                          {% if comodidades[2] == "True" %}
-                                             <li>Acepta mascotas</li>
-                                          {% endif %}
-                                          {% if comodidades[5] == "True" %}
-                                             <li>Wifi</li>
-                                          {% endif %}
-                                      </ul>
-                                  </td>
-                                  <td></td>
-                              </tr>
-                              <tr>
-                                  <th scope="row">Telefono de contacto</th>
-                                  <td>
-                                      <p>{{home[9]}}</p>
-                                  </td>
-                                  <td></td>
-                              </tr><!-- END TR-->
-                              <tr>
-                                  <th scope="row">Mail de contacto</th>
-                                  <td>
-                                      <p>{{home[10]}}</p>
-                                  </td>
-                                  <td></td>
-                              </tr><!-- END TR-->
+                                          </tr>
 
-                          </tbody>
-                      </table>
+                                          <tr>
+                                              <th scope="row">Habitaciones</th>
+                                              <td>
+                                                  <p>{{home[7]}} Dormitorios</p>
+                                              </td>
+
+                                          </tr>
+
+                                          <tr>
+                                              <th scope="row">Baños</th>
+                                              <td>
+                                                  <p>{{home[6]}} Baños</p>
+                                              </td>
+
+                                          </tr>
+                                          <tr>
+                                              <th scope="row">Comodidades</th>
+                                              <td class="d-flex">
+                                                  <ul>
+                                                      {% if comodidades[1] %}
+                                                         <li>A {{comodidades[1]}} metros del mar</li>
+                                                      {% endif %}
+                                                      {% if comodidades[4] == "True" %}
+                                                         <li>Television</li>
+                                                      {% endif %}
+                                                      {% if comodidades[2] == "False" %}
+                                                         <li>No acepta mascotas</li>
+                                                      {% endif %}
+                                                      {% if comodidades[2] == "True" %}
+                                                         <li>Acepta mascotas</li>
+                                                      {% endif %}
+                                                      {% if comodidades[5] == "True" %}
+                                                         <li>Wifi</li>
+                                                      {% endif %}
+                                                  </ul>
+
+                                              </td>
+
+                                          </tr>
+                                          <tr>
+                                              <th scope="row">Telefono de contacto</th>
+                                              <td>
+                                                  <p>{{home[9]}}</p>
+                                              </td>
+
+                                          </tr>
+                                          <tr>
+                                              <th scope="row">Mail de contacto</th>
+                                              <td>
+                                                  <p>{{home[10]}}</p>
+                                              </td>
+
+                                          </tr>
+                                </tbody>
+                            </table>
+                    </div>
                   </div>
               {% if home[12] != 1 %}
                   <div class="comment-form-wrap pt-5 w-80">
                     <h3 class="mb-5">Consultar disponibilidad</h3>
                       <div class=" p-5 bg-light">
-                          <div class="btn-group mr-5 ml-5">
+                          <div id="btmail" class="btn-group mr-5 ml-5">
                               <div class="form-field">
                                 <a href="mailto:{{home[11]}}?Subject=Consulta%20por%20el%20alquiler%20de%20{{home[1]}}">
                                    <button type="submit" class="btn btn-primary p-2">
@@ -173,7 +187,7 @@
                             </div>
                           </div>
                           <div class="btn-group ml-5">
-                              <div class="form-field">
+                              <div id="btwarap" class="form-field">
                                   <a href="https://api.whatsapp.com/send?phone=+54{{home[10]}}&text=hola">
                                        <button type="submit" class="btn btn-primary p-2">
                                                      Consultar por WhatsApp
