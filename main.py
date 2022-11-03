@@ -75,6 +75,7 @@ def filtro(id):
     Dmar = request.form['dmar']
     mascota = request.form['mascotas']
     parrilla = request.form['parrilla']
+    cochera = request.form['cochera']
     val = request.form['val']
     cp = request.form['cp']
     loc = request.form['loc']
@@ -87,7 +88,7 @@ def filtro(id):
 
     comHome = []
     for i in homes[0]:
-        if bool(getHomeComodidades(i[0], Dmar, mascota, parrilla)):
+        if bool(getHomeComodidades(i[0], Dmar, mascota, parrilla, cochera)):
             comHome.append(getHomeCustom(i[0]))
 
     if bool(comHome):
