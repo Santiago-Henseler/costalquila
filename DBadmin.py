@@ -36,7 +36,7 @@ def getSearchHome(l, v, c):
     c2 = c1 + 2
     if v1 == 120:
         home = cursor.execute(f"""SELECT * FROM Propiedades WHERE Localidad = '{l}'
-                                 AND Valores > '{v1}'
+                                 AND Valores >= '{v1}'
                                  AND Npersonas between '{c1}' AND '{c2}';""").fetchall()
     else:
         home = cursor.execute(f"""SELECT * FROM Propiedades WHERE Localidad = '{l}'
@@ -51,18 +51,24 @@ def getComodidades(id):
     return comodidades
 
 
-def getHomeComodidades(id, Dmar, mascota, parrilla):
+def getHomeComodidades(id, Dmar, mascota, parrilla, cochera):
     c1 = int(Dmar)
     c2 = int(Dmar)+100
     comodidades = ""
     if c1 == 500:
         comodidades = cursor.execute(f"""SELECT * FROM Comodidades WHERE ID = '{id}'
-                                                 AND Dmar > '{c2}'
+                                                 AND Dmar >= '{c2}'
                                                  AND Mascotas = '{mascota}'
                                                  AND parrilla = '{parrilla}'
+                                                 AND Cochera = '{cochera}'
                                              ;""").fetchall()
     else:
         comodidades = cursor.execute(f"""SELECT * FROM Comodidades WHERE ID = '{id}'
                                          AND Dmar between '{c1}' AND '{c2}'
+                                         AND Mascotas = '{mascota}'
+                                         AND parrilla = '{parrilla}'
+                                         AND Cochera = '{cochera}'
                                      ;""").fetchall()
+
+    print(comodidades)
     return comodidades
