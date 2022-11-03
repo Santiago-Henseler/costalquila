@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <title>Costa Alquila - Busqueda de propiedades</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Buscar alquileres en la costa atlantica">
+    <meta name="author" content="Costalquila.ml" />
+    <meta name="keywords" content="Alquileres, Alquilar, Costa atlantica, Vacaciones, Propiedades">
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F01JG2RFWS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F01JG2RFWS');
+</script>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="30">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container ">
+            <a class="navbar-brand text-dark" href="{{url_for('inicio', id = 1)}}">Costa Alquila</a>
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto ">
+                    <li class="nav-item"><a href="{{url_for('inicio', id = 1)}}" class="nav-link text-dark"><span>Inicio</span></a></li>
+                    <li class="nav-item"><a href="{{url_for('ComoPublicar')}}" class="nav-link text-dark"><span>Como publicar</span></a></li>
+                    <li class="nav-item"><a href="{{url_for('Publicar')}}" class="nav-link text-dark"><span>Publicar</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="ftco-section ftco-properties" id="properties-section">
+        {% if nhome %}
+        <div class="container-fluid px-md-5">
+            <div class="row">
+                <div class="col-lg-3 pr-lg-4">
+                    <div class="search-wrap">
+                        <h3 class="mb-5">Filtro de propiedades</h3>
+                        <form method="POST" action="/Buscar/filtro/1" class="search-property">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                            <input type="hidden" name="loc" id="loc" value="{{loc}}"/>
+                            <input type="hidden" id="val" name="val" value="{{val}}"/>
+                            <input type="hidden" name="cp" id="cp" value="{{cp}}"/>
+                            <div class="row">
+                                <div class="col-md-12 align-items-end ftco-animate">
+                                    <div class="form-group">
+                                        <label >Distancia al mar</label>
+                                        <div class="form-field">
+                                            <div class="select-wrap">
+                                                <select name="dmar" id="dmar" class="form-control" required>
+                                                    <option value="">Seleccionar</option>
+                                                    <option value="100">100mts a 200mts</option>
+                                                    <option value="200">200mts a 300mts</option>
+                                                    <option value="300">300mts a 400mts</option>
+                                                    <option value="400">400mts a 500mts</option>
+                                                    <option value="500">más de 500mts</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 align-items-end ftco-animate">
+                                    <div class="form-group">
+                                        <label>Acepta mascotas</label>
+                                        <div class="form-field">
+                                            <div class="select-wrap">
+                                                <select name="mascotas" id="mascotas" class="form-control" required>
+                                                    <option value="">Seleccionar</option>
+                                                    <option value="True">Si</option>
+                                                    <option value="False">No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 align-items-end ftco-animate" >
+                                    <div class="form-group">
+                                        <label >Con parrilla</label>
+                                        <div class="form-field">
+                                            <div class="select-wrap">
+                                                <select name="parrilla" id="parrilla" class="form-control" required>
+                                                    <option value="">Seleccionar</option>
+                                                    <option value="True">Si</option>
+                                                    <option value="False">No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 align-items-end ftco-animate" >
+                                    <div class="form-group">
+                                        <label >Con cochera</label>
+                                        <div class="form-field">
+                                            <div class="select-wrap">
+                                                <select name="cochera" id="cochera" class="form-control" required>
+                                                    <option value="">Seleccionar</option>
+                                                    <option value="True">Si</option>
+                                                    <option value="False">No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 align-self-end ftco-animate">
+                                    <div class="form-group">
+                                        <div class="form-field">
+                                            <button type="submit" class="form-control btn btn-primary">
+                                                Filtrar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end -->
+
+                <!-- propiedades -->
+                <div class="col-lg-9">
+                    <div class="row">
+
+                            {% for i in home %}
+                                <div class="col-md-6 col-lg-4">
+                                    <a  href="{{url_for('Alquileres', id = i[0])}}">
+                                    <div class="properties ftco-animate">
+                                        <div class="img">
+                                            <img src="https://i.ibb.co/{{i[11]}}" class="img-fluid" loading="lazy" alt="Foto casas en alquiler" border="0">
+                                        </div>
+                                        <div class="desc">
+                                            <div class="d-flex pt-5">
+                                                <div>
+                                                    <h3>{{i[1]}}</h3>
+                                                </div>
+                                                <div class="pl-md-4">
+                                                    <h4 class="price">{{i[5]}}.000$</h4>
+                                                </div>
+                                            </div>
+                                            <p class="h-info"><span class="location"> {{i[2]}} </span> <span class="details">&mdash; {{i[7]}} piezas, {{i[8]}} baños</span></p>
+                                        </div>
+                                    </div>
+                                        </a>
+                                </div>
+                            {% endfor %}
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col text-center">
+                            <div class="block-27">
+                                <ul>
+                                    {% for i in range(0, n) %}
+                                        {%if id-1 == i %}
+                                            <li class="active"><span>{{i+1}}</span></li>
+                                        {% endif %}
+                                        {% if id-1 != i %}
+                                            <li><span><a href="{{url_for('Buscar', id = i+1)}}">{{i+1}}</a></span></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% if not nhome %}
+        <div class="container-fluid px-md-5">
+            <div class="row">
+                <div class="col-lg-3 pr-lg-4">
+                    <div class="search-wrap">
+                        <h3 class="mb-5">Buscador de alquileres</h3>
+                        <form method="POST" action="/Buscar/1" class="search-property">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                            <div class="row">
+                                <div class="col-md-12 align-items-end ftco-animate">
+                                    <div class="form-group">
+                                        <label >Localidad</label>
+                                        <div class="form-field">
+                                            <div class="select-wrap">
+                                                <select  name="Localidad" id="Localidad" class="form-control" required>
+                                                    <option value="">Seleccionar</option>
+                                                    {% for i in Alloc %}
+                                                    <option value="{{i}}">{{i}}</option>>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 align-items-end ftco-animate">
+                                    <div class="form-group">
+                                        <label>Personas</label>
+                                        <div class="form-field">
+                                            <div class="select-wrap">
+                                                <select name="Cpersonas" id="Cpersonas" class="form-control" required>
+                                                    <option value="">Seleccionar</option>
+                                                    <option value="2">2 a 4</option>
+                                                    <option value="4">4 a 6</option>
+                                                    <option value="6">6 a 8</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 align-items-end ftco-animate">
+                                    <div class="form-group">
+                                        <label >Presupuesto</label>
+                                        <div class="form-field">
+                                            <div class="select-wrap">
+                                                <select name="valor" id="valor" class="form-control" required>
+                                                    <option value="">Seleccionar</option>
+                                                    <option value="40">40.000$ a 60.000$</option>
+                                                    <option value="60">60.000$ a 80.000$</option>
+                                                    <option value="80">80.000$ a 100.000$</option>
+                                                    <option value="100">100.000$ a 120.000$</option>
+                                                    <option value="120">más de 120.000$</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 align-self-end ftco-animate">
+                                    <div class="form-group">
+                                        <div class="form-field">
+                                            <button type="submit" class="form-control btn btn-primary">
+                                                Buscar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end -->
+                <div class="col-lg-9">
+                    <div class="row">
+                        <div class="alert alert-danger mt-5">
+                             <strong>Propiedades inexistentes!</strong><br/>
+                            No encontramos ninguna propiedad que se adapte a tu busqueda, Intentalo otra vez!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </section>
+    <!--end-->
+
+    <!--footer-->
+    <footer class="ftco-footer ftco-section">
+        <div class="container-fluid px-md-5">
+            <div class="row mb-5">
+                <div class="col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2"><u>Consultas</u></h2>
+                        <p>Comunicate con nosotros a través de nuestros medios oficiales:</p>
+                        <ul class="list-unstyled">
+                              <li><a href="https://api.whatsapp.com/send?phone= +54 011 4075-7169"><span>&gt;</span> +54 011 4075-7169</a></li>
+                              <li><a href="mailto:costalquila@gmail.com"><span>&gt;</span> costalquila@gmail.com</a></li>
+                              <li><a href="https://www.instagram.com/costalquila/"><span>&gt;</span> @costalquila</a></li>
+                          </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+
+                    <p>
+                        Todos los derechos reservados &copy;
+                        <script>document.write(new Date().getFullYear());</script>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+        </svg></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.4.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js" integrity="sha512-g2PN+aYR0KupTVwea5Ppqw4bxWLLypWdd+h7E0ydT8zF+/Y2Qpk8Y1SnzVw6ZCVJPrgB/91s3VfhVhP7Y4+ucw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.1/jquery.stellar.min.js" integrity="sha512-MZiEKWRoqHmTsaur2/0bTQaOT5DqmnMDWuXoYXgNwFzCq+J2rQRIa4uVOmkL7SnIIhis6V4IcPnhqKxgOt8zDg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/scrollax@1.0.0/scrollax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
