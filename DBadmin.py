@@ -35,13 +35,23 @@ def getSearchHome(l, v, c):
     c1 = int(c)
     c2 = c1 + 2
     if v1 == 120:
-        home = cursor.execute(f"""SELECT * FROM Propiedades WHERE Localidad = '{l}'
-                                 AND Valores >= '{v1}'
-                                 AND Npersonas between '{c1}' AND '{c2}';""").fetchall()
+        if c2 == 8:
+            home = cursor.execute(f"""SELECT * FROM Propiedades WHERE Localidad = '{l}'
+                                     AND Valores >= '{v1}'
+                                     AND Npersonas >= '{c1}' ;""").fetchall()
+        else:
+            home = cursor.execute(f"""SELECT * FROM Propiedades WHERE Localidad = '{l}'
+                                              AND Valores >= '{v1}'
+                                              AND Npersonas between '{c1}' AND '{c2}';""").fetchall()
     else:
-        home = cursor.execute(f"""SELECT * FROM Propiedades WHERE Localidad = '{l}'
-                               AND Valores between '{v1}' AND '{v2}'
-                               AND Npersonas between '{c1}' AND '{c2}';""").fetchall()
+        if c2 == 8:
+            home = cursor.execute(f"""SELECT * FROM Propiedades WHERE Localidad = '{l}'
+                                     AND Valores >= '{v1}'
+                                     AND Npersonas >= '{c1}' ;""").fetchall()
+        else:
+            home = cursor.execute(f"""SELECT * FROM Propiedades WHERE Localidad = '{l}'
+                                              AND Valores >= '{v1}'
+                                              AND Npersonas between '{c1}' AND '{c2}';""").fetchall()
 
     return home
 
